@@ -3,3 +3,12 @@
 body {
     font-family: 'Inter', sans-serif;
 }
+.alert{
+    text-decoration-color: white;
+    padding: 20px;
+    width: fit-content;
+    background: #f7fee7;
+    border: 2px solid #84cc16;
+    border-radius: 8px;
+    font-weight: 500;
+}
