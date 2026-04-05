@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f2f5; /* Светло-серый фон */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.followers-page-container {
+    width: 100%;
+    max-width: 1100px; /* Максимальная ширина страницы */
+}
+
+.page-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px; /* Отступ под заголовком */
+}
+
+.followers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 колонки, адаптивные */
+    gap: 20px; /* Отступ между карточками */
+}
+
+.follower-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Отступ между элементами в карточке */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Легкая тень */
+}
+
+.follower-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Круглая аватарка */
+    object-fit: cover; /* Чтобы изображение хорошо обрезалось */
+    flex-shrink: 0; /* Аватарка не будет сжиматься */
+}
+
+.follower-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Занимает все доступное пространство */
+}
+
+.follower-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.follower-location {
+    font-size: 14px;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+}
+
+.location-icon {
+    font-size: 14px; /* Размер иконки геолокации */
+    margin-right: 5px;
+    color: #6c757d;
+}
+
+.follow-button {
+    background-color: #f0f2f5; /* Светло-серый фон кнопки */
+    color: #2c3e50;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-shrink: 0; /* Кнопка не будет сжиматься */
+    display: flex; /* Для выравнивания галочки */
+    align-items: center;
+    justify-content: center;
+}
+
+.follow-button:hover {
+    background-color: #e0e4e8;
+}
+
+.follow-button.following {
+    background-color: rgba(60, 179, 113, 0.1); /* Прозрачный зеленый фон для "Following" */
+    color: #3cb371; /* Зеленый текст */
+}
+
+.follow-button.following:hover {
+    background-color: rgba(60, 179, 113, 0.2);
+}
+
+.tick-icon {
+    margin-right: 5px;
+    font-size: 14px;
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 900px) {
+    .followers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Уменьшим минимальную ширину */
+    }
+    .page-title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 600px) {
+    .followers-grid {
+        grid-template-columns: 1fr; /* Одна колонка на очень узких экранах */
+    }
+    .page-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    .follower-card {
+        padding: 15px;
+    }
+    .follower-avatar {
+        width: 50px;
+        height: 50px;
+    }
+    .follower-name {
+        font-size: 16px;
+    }
+    .follower-location {
+        font-size: 13px;
+    }
+    .follow-button {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+}

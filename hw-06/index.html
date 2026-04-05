@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //===================================================================
+            //Задание 1
+            console.log("--- Задание 1 ---");
+            {
+                const car = {
+                    brand: "Honda",
+                    model: "Civic",
+                    year: 2020,
+
+                    getDescription: function () {
+                        return `${this.brand} ${this.model}, выпущен в ${this.year} году.`;
+                    },
+                };
+                console.log(car.getDescription());
+            }
+
+            //===================================================================
+            //Задание 2
+            console.log("--- Задание 2.1 и 2.3 ---");
+            class Book {
+                constructor(title, author, year) {
+                    this.title = title;
+                    this.author = author;
+                    this.year = year;
+                }
+
+                getSummary() {
+                    return this.title + " была написана " + this.author + " в " + this.year + " году";
+                }
+
+                static compareAge(bookOne, bookTwo) {
+                    if (bookOne.year < bookTwo.year) {
+                        return `"${bookOne.title}" старше, чем "${bookTwo.title}"`;
+                    } else if (bookOne.year > bookTwo.year) {
+                        return `"${bookTwo.title}" старше, чем "${bookOne.title}"`;
+                    } else {
+                        return `"${bookOne.title}" и "${bookTwo.title}" изданы в один год`;
+                    }
+                }
+            }
+
+            const book1 = new Book("Война и мир", "Лев Толстой", 1869);
+            const book2 = new Book("Анна Каренина", "Лев Толстой", 1877);
+
+            console.log(Book.compareAge(book1, book2));
+
+            console.log("--- Задание 2.2 ---");
+
+            class Magazine extends Book {
+                constructor(title, author, year, month) {
+                    super(title, author, year);
+                    this.month = month;
+                }
+
+                getSummary() {
+                    return this.title + " (выпуск: " + this.month + " " + this.year + "), издатель: " + this.author;
+                }
+            }
+
+            const mag1 = new Magazine("National Geographic", "National Geographic Society", 1888, "Июль");
+            console.log(mag1.getSummary());
+        </script>
+    </body>
+</html>

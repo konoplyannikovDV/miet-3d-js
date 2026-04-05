@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Основы JavaScript Задания</title>
+    </head>
+    <body>
+        <script>
+            //===================================================================
+            //Задание 1
+let adminName;
+let userName;
+userName = "Павел";
+adminName = userName;
+alert("Задание 1: " + adminName);
+            //===================================================================
+            //Задание 2
+const ourPlanetName = "Земля";
+let currentUserName = "Павел";
+const userRegistrationDate = "27.10.1999"; 
+let userRole = "admin";
+
+console.log("\n--- Задание 2---")
+console.log("Планета: " + ourPlanetName);
+console.log("Юзер: " + currentUserName);
+console.log("Дата регистрации: " + userRegistrationDate);
+console.log("Роль: " + userRole);
+            //===================================================================
+            //Задание 3
+            console.log("\n--- Задание 3 ---");
+const product = {
+    name: "DDr5",
+    price: 100000
+};
+product.category = "Электроника";
+product.price = 15000;
+console.log("Весь объект:", product);
+console.log("Название товара: ", product.name);
+console.log("Цена товара: ", product.price);
+console.log("Категория товара: ", product.category);
+            //===================================================================
+            //Задание 4
+            console.log("\n--- Задание 4 ---");
+const student = {
+    name: "Кирилл",
+    age: 24,
+    courses: ["Физика", "Математика"],
+    address: {
+        city: "Москва",
+        street: "ул. Пушкина",
+        number: 10
+    }
+};
+
+student.courses.push("JavaScript");
+student.address.city = "Санкт-Петербург";
+student.courses.shift();
+student.grades = {
+    Math: 5,
+    JavaScript: 4
+};
+
+console.log("Информация о студенте:");
+console.log("Имя:", student.name);
+console.log("Возраст:", student.age);
+console.log("Город:", student.address.city);
+console.log("Адрес:", student.address.street + ", д." + student.address.number);
+console.log("Изучаемые курсы:", student.courses.join(", "));
+console.log("Оценки по курсам:", student.grades);
+            //===================================================================
+            //Задание 6
+            console.log("\n--- Задание 6 ---");
+
+function greet(name) {
+    return `Привет, ${name}!`;
+}
+
+function sum(a, b) {
+    return a + b;
+}
+
+function isEven(number) {
+    return number % 2 === 0;
+}
+
+function calculateArea(width, height) {
+    return width * height;
+}
+
+console.log(greet("Жора"));
+console.log("Сумма (11+14): ", sum(11, 14)); 
+console.log("11 четное?: ", isEven(11));
+console.log("6 четное?: ", isEven(6));           
+console.log("Площадь (7*5): ", calculateArea(7, 5));
+        </script>
+    </body>
+</html>

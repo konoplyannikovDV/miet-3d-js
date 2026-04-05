@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Основы JavaScript Задания</title>
+    </head>
+    <body>
+        <script>
+            //===================================================================
+            //Задание 1
+            console.log("\n--- Задание 1 ---");
+            function filterEvenNumbers(originalArray) {
+                return originalArray.filter((number) => number % 2 === 0);
+            }
+
+            const originalArray = [1, 2, 3, 4, 5, 6];
+            const evenArray = filterEvenNumbers(originalArray);
+            console.log("Исходный массив:", evenArray);
+
+            const emptyArray = [];
+            const evenEmptyArray = filterEvenNumbers(emptyArray);
+            console.log("Пустой массив:", evenEmptyArray);
+
+            const oddArray = [1, 3, 5, 7];
+            const evenOddArray = filterEvenNumbers(oddArray);
+            console.log("Только нечетные:", evenOddArray);
+
+            const mixedArray = [-1, -2, 0, 3, -4, 5];
+            const evenMixedArray = filterEvenNumbers(mixedArray);
+            console.log("Смешанный:", evenMixedArray);
+
+            //===================================================================
+            //Задание 2
+            console.log("\n--- Задание 2 ---");
+            function countdownWhile(n) {
+                console.log(`Вывод чисел от ${n} до 1:`);
+
+                if (typeof n !== "number" || !Number.isInteger(n) || n <= 0) {
+                    console.error("Ошибка: n должно быть положительным целым числом.");
+                    return;
+                }
+
+                let currentNumber = n;
+
+                while (currentNumber >= 1) {
+                    console.log(currentNumber);
+                    currentNumber--;
+                }
+            }
+
+            countdownWhile(15);
+
+            countdownWhile(7);
+
+            countdownWhile(0);
+            countdownWhile(-5);
+            countdownWhile(3.5);
+            countdownWhile("abc");
+
+            //===================================================================
+            //Задание 3
+            console.log("\n--- Задание 3 ---");
+            function getWordLengths(wordsArray) {
+                return wordsArray.map((word) => word.length);
+            }
+
+            const fruits = ["яблоко", "банан", "апельсин"];
+            const lengths = getWordLengths(fruits);
+            console.log(fruits);
+            console.log(lengths);
+
+            //===================================================================
+            //Задание 4
+            console.log("\n--- Задание 4 ---");
+            function enumerateStrings(stringsArray) {
+                console.log("Нумерованный вывод строк:");
+                stringsArray.forEach((string, index) => {
+                    console.log(`${index + 1}. ${string}`);
+                });
+            }
+
+            const greetings = ["Привет", "Как дела?", "До свидания"];
+            enumerateStrings(greetings);
+
+            //===================================================================
+            //Задание 5
+            console.log("\n--- Задание 5 ---");
+            function filterGreaterThan(arr, n) {
+                return arr.filter((number) => number > n);
+            }
+            const numbersToCheck = [10, 20, 30, 40, 50];
+            const threshold = 25;
+
+            const result = filterGreaterThan(numbersToCheck, threshold);
+
+            console.log("Массив:", numbersToCheck);
+            console.log("Числа больше " + threshold + ":", result);
+        </script>
+    </body>
+</html>
